@@ -12,12 +12,6 @@ export default defineConfig({
       '*://www.youtube.com/*',
       '*://youtube.com/*',
       '*://m.youtube.com/*'
-    ],
-    web_accessible_resources: [
-      {
-        resources: ['youtube-injected.js'],
-        matches: ['*://*.youtube.com/*']
-      }
     ]
   },
   runner: {
