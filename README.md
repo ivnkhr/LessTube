@@ -11,3 +11,4 @@ Method: Injecting css & script that will remove and disable all parts wich fetch
 
 ===========================================
 
+GEMINI PROJECT PRD: GEMINI.md

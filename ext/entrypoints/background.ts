@@ -16,17 +16,17 @@ export default defineBackground(() => {
       const isSearchUrl = url.pathname === '/results' && url.searchParams.has('search_query');
 
       // Check if it's a subscriptions page URL (main page)
-      const isAllowedPage = url.pathname === defaultAllowedPage;
+      const isAllowedPage = url.pathname.includes(defaultAllowedPage);
       
 
       // Allow watch URLs and search URLs to pass through
       if (!isWatchUrl && !isSearchUrl && !isAllowedPage) {
         // Redirect to channels feed for any other YouTube URL
-        const redirectUrl = 'https://www.youtube.com/' + defaultAllowedPage;
+        const redirectUrl = 'https://www.youtube.com/' + defaultAllowedPage + '&redirected=in';
 
         console.log(`Redirecting ${url.href} to ${redirectUrl}`);
 
-        return;
+        // return;
         browser.tabs.update(tabId, {
           url: redirectUrl
         });
